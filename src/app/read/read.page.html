@@ -1,13 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>read</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">read</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-content class="background">
+
+
+<nav class="ttop">
+   <img src="../../assets/images/Recetas.png" alt="">
+</nav>
+<nav class="ltop">
+  <b>Ingrediente</b>
+  <p>..............</p>
+</nav>
+
+<nav id="container" style="padding: 20px">
+  <div class="flex">
+<b>Humitas</b> <ion-button color="light"  [routerLink]="['/content']"> ver receta </ion-button>
+</div >
+<div class="flex">
+<b>Porotos con Mazamorra</b> <ion-button color="light"  [routerLink]="['/content']"> ver receta </ion-button>
+</div>
+<div class="flex">
+<b>Cazuelita de Vacuno</b> <ion-button color="light"[routerLink]="['/content']" > ver receta </ion-button>
+</div>
+</nav>
+<nav class="bot">
+    <ion-button color="light"[routerLink]="['/lobby']"> volver </ion-button>
+</nav>
 </ion-content>
