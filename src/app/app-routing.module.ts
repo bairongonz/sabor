@@ -15,7 +15,35 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },  {
+    path: 'create',
+    loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
   },
+  {
+    path: 'delete',
+    loadChildren: () => import('./delete/delete.module').then( m => m.DeletePageModule)
+  },
+  {
+    path: 'lobby',
+    loadChildren: () => import('./lobby/lobby.module').then( m => m.LobbyPageModule)
+  },
+  {
+    path: 'read',
+    loadChildren: () => import('./read/read.module').then( m => m.ReadPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'update',
+    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
+  },
+  {
+    path: 'content',
+    loadChildren: () => import('./content/content.module').then( m => m.ContentPageModule)
+  },
+
 
 
 
