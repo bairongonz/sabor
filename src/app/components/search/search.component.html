@@ -1,0 +1,23 @@
+<nav class = ''>
+  <ion-button class="boton" color="Danger"  id="open-modal"><ion-icon name="search"> </ion-icon> {{search}}</ion-button>
+</nav>
+<ion-button color="Danger"  [routerLink]="['/read']" style="border: black 3px solid; border-radius: 15px;"> Buscar</ion-button>
+
+
+<ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75] " class="page">
+  <ng-template>
+    <ion-content>
+      <ion-searchbar placeholder="Search" (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+      <ion-list>
+        <ion-item>
+
+          <ion-button (click)="Numeric('huevo')">huevo</ion-button>
+          <ion-button (click)="Numeric('papa')">papa</ion-button>
+          <ion-button (click)="Numeric('zapallo')">zapallo</ion-button>
+
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>
