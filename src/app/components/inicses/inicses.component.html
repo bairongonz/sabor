@@ -1,0 +1,13 @@
+<nav style="padding: 20px">
+  <form (ngSubmit)="Login()">
+  
+      <ion-input [(ngModel)]="email" name="email" label="E-mail"  type="email"label-placement="floating" fill="outline" placeholder="Enter text" required></ion-input>
+
+      <ion-input [(ngModel)]="password" name="password" label="password" type="password"label-placement="floating" fill="outline" placeholder="Enter text" required></ion-input>
+  
+    <ion-button expand="full" type="submit">iniciar sesion</ion-button>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </form>
+  </nav>

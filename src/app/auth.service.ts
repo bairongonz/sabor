@@ -38,6 +38,6 @@ export class AuthService {
     }
 }
 
-  // Aquí puedes añadir más métodos como signUp, signOut, etc.
+  // Aquí puedes añadir más métodos como signOut, etc.
 }
 
