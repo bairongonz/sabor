@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';  // Importación del módulo de autenticación de AngularFire
-
+import { Router } from '@angular/router';
 // @ts-ignore
 export interface DocumentSnapshotExists<T> extends firebase.firestore.DocumentSnapshot {
   // ...
@@ -11,7 +11,7 @@ export interface DocumentSnapshotExists<T> extends firebase.firestore.DocumentSn
 })
 export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth) {}  // Inyectamos AngularFireAuth
+  constructor(private afAuth: AngularFireAuth, private router: Router) {}  // Inyectamos AngularFireAuth
 
   async signIn(email: string, password: string): Promise<boolean> {
     try {
@@ -38,6 +38,10 @@ export class AuthService {
     }
 }
 
-  // Aquí puedes añadir más métodos como signOut, etc.
+async signOut(): Promise<void> {
+  await this.afAuth.signOut();
+  this.router.navigate(['/lobby']);  // Redirigir al usuario al inicio de sesión después de cerrar sesión
+
+};
 }
 
