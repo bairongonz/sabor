@@ -21,9 +21,9 @@ export class LobbyPage implements OnInit {
 
       const receta = {
         receta: {
-        nombre: 'Nombre de la receta',
-        ingredientes: 'Lista de ingredientes',
-        preparacion: 'Instrucciones de preparación',}
+        nombre: 'Papas fritas',
+        ingredientes: '1 papa',
+        preparacion: '(opcional) pelar las papas, cortar las papas en formas delgadas, freir en aceite caliente, sazonar con sal al gusto, servir',}
 
       };
 
