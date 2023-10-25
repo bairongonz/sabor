@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CrudRecipeComponent } from 'app/components/crud-recipe/crud-recipe.component';
+import { FiltrarComponent } from 'app/components/filtrar/filtrar.component';
 import { IonicModule } from '@ionic/angular';
 
 import { ReadPageRoutingModule } from './read-routing.module';
@@ -15,6 +15,6 @@ import { ReadPage } from './read.page';
     IonicModule,
     ReadPageRoutingModule
   ],
-  declarations: [ReadPage, CrudRecipeComponent]
+  declarations: [ReadPage,FiltrarComponent]
 })
 export class ReadPageModule {}

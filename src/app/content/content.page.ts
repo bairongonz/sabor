@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-content',
   templateUrl: './content.page.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private route: ActivatedRoute) { }
+  name:any = '';
+  ingr:any ='';
+  prep:any ='';
   ngOnInit() {
+    this.name = this.route.snapshot.paramMap.get('nombre');
+    this.ingr = this.route.snapshot.paramMap.get('ingredientes');
+    this.prep = this.route.snapshot.paramMap.get('preparacion');
+
+    }
   }
 
-}

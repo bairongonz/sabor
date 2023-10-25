@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { CrudRecipeComponent } from './crud-recipe.component';
+import { CrearComponent } from './crear.component';
 
-describe('CrudRecipeComponent', () => {
-  let component: CrudRecipeComponent;
-  let fixture: ComponentFixture<CrudRecipeComponent>;
+describe('CrearComponent', () => {
+  let component: CrearComponent;
+  let fixture: ComponentFixture<CrearComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrudRecipeComponent ],
+      declarations: [ CrearComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CrudRecipeComponent);
+    fixture = TestBed.createComponent(CrearComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

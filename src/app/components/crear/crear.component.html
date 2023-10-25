@@ -1,0 +1,12 @@
+<nav style="padding: 20px">
+  <form (ngSubmit)="addRecipe()">
+  
+      <ion-input [(ngModel)]="nombre" name="name" label="Nombre"  type="text" label-placement="floating" fill="outline" placeholder="Enter text" required></ion-input>
+      <ion-input [(ngModel)]="ingredientes" name="needs" label="Ingredientes"  type="text" label-placement="floating" fill="outline" placeholder="Enter text" required></ion-input>
+      <ion-input [(ngModel)]="receta" name="recipe" label="receta"  type="textarea" label-placement="floating"  fill="outline" placeholder="Enter text" required></ion-input>
+
+     
+    <ion-button expand="full" type="submit">crear <ion-icon name="hammer-outline"></ion-icon></ion-button>
+
+  </form>
+  </nav>
