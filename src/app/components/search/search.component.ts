@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -8,7 +9,7 @@ import { ActionSheetController } from '@ionic/angular';
 export class SearchComponent  implements OnInit {
   presentingElement: Element | null = null;
 
-  constructor(private actionSheetCtrl: ActionSheetController) { }
+  constructor(private actionSheetCtrl: ActionSheetController, private router:Router) { }
 
 search : string = "Buscar ingredientes";
   private numero = 1; // Variable para almacenar el número
@@ -24,6 +25,10 @@ handleDisminuir() {
   else {
     this.numero -=  1;
   }
+}
+
+searcher(){
+  this.router.navigate(['/read']);
 }
   ngOnInit() {
     const element = document.querySelector('.page');
