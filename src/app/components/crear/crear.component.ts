@@ -25,27 +25,26 @@ export class CrearComponent  implements OnInit {
   receta : string = '';
 
   addRecipe() {
-    // Comprobar si se han proporcionado los valores requeridos
+
     if (!this.nombre || !this.ingredientes || !this.receta) {
-      // Manejar un error, por ejemplo, mostrar un mensaje al usuario
+
       console.error('Por favor, complete todos los campos de la receta.');
       return;
     }
 
-    // Crear un objeto con los datos de la receta
     const nuevaReceta: Receta = {
       nombre: this.nombre,
-      ingredientes: this.ingredientes, // Convierte a número si es necesario
+      ingredientes: this.ingredientes, 
       preparacion: this.receta,
     };
 
-    // Agregar la nueva receta a la base de datos
+
     push(recetasRef, nuevaReceta)
       .then(() => {
         console.log('Receta agregada exitosamente.');
         this.router.navigate(['/lobby']);
         
-        // Limpiar los campos del formulario después de agregar la receta
+       
         this.nombre = '';
         this.ingredientes = '';
         this.receta = '';

@@ -1,0 +1,15 @@
+
+
+<div *ngIf="(logged$ | async) === false">
+  <ion-button color="Danger"  [routerLink]="['/login']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Iniciar Sesión</ion-button>
+  <ion-button color="Danger"  [routerLink]="['/register']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Registrarse</ion-button>
+</div>
+<div *ngIf="(logged$ | async) === true">
+  <p>opciones de administrador</p>
+  <ion-button color="Danger"  [routerLink]="['/create']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Crear</ion-button>
+  <ion-button color="Danger"  [routerLink]="['/delete']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Eliminar</ion-button>
+  <p>opciones de Usuario</p>
+  <ion-button color="Danger" (click)="cerrarSesion()" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Cerrar sesion</ion-button>
+</div>
+
+ 

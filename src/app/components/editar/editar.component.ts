@@ -12,40 +12,19 @@ class Receta {
   ingredientes: string = '';
   receta: string = '';
 }
-
 @Component({
-  selector: 'app-eliminar',
-  templateUrl: './eliminar.component.html',
-  styleUrls: ['./eliminar.component.scss'],
+  selector: 'app-editar',
+  templateUrl: './editar.component.html',
+  styleUrls: ['./editar.component.scss'],
 })
-export class EliminarComponent implements OnInit, OnDestroy {
+export class EditarComponent  implements OnInit {
   private recetasSubscription: Subscription | undefined;
   recetas$: Observable<Receta[]> | undefined;
-
   constructor() { }
 
   ngOnInit() {
     this.ListRecipes();
   }
-
-  ngOnDestroy() {
-
-    if (this.recetasSubscription) {
-      this.recetasSubscription.unsubscribe();
-    }
-  }
-
-  RemoveRecipe(claveUnica: any) {
-    console.log(claveUnica.id)
-    remove(ref(database,`recetas/${claveUnica.id}`))
-      .then(() => {
-        console.log('Receta eliminada exitosamente.');
-      })
-      .catch((error) => {
-        console.error('Error al eliminar receta:', error);
-      });
-  }
-
   ListRecipes() {
     this.recetasSubscription = new Observable<Receta[]>((subscriber) => {
       onValue(recetasRef, (snapshot: DataSnapshot) => {
@@ -66,4 +45,5 @@ export class EliminarComponent implements OnInit, OnDestroy {
       this.recetas$ = new Observable((subscriber) => subscriber.next(recetas));
     });
   }
+
 }

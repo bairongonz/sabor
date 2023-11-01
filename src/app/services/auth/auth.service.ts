@@ -1,22 +1,34 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';  // Importación del módulo de autenticación de AngularFire
+import { AngularFireAuth } from '@angular/fire/compat/auth';  
 import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
 // @ts-ignore
 export interface DocumentSnapshotExists<T> extends firebase.firestore.DocumentSnapshot {
-  // ...
+
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private isAuthenticated = new BehaviorSubject<boolean>(false);
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}  // Inyectamos AngularFireAuth
+  checkAuthentication(): boolean {
+    return this.isAuthenticated.value;
+  }
+  getIsAuthenticated(): Observable<boolean> {
+    return this.isAuthenticated.asObservable();
+  }
+  constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
   async signIn(email: string, password: string): Promise<boolean> {
     try {
-      await this.afAuth.signInWithEmailAndPassword(email, password); // Utilizamos el método de AngularFireAuth
+      await this.afAuth.signInWithEmailAndPassword(email, password);
+      this.isAuthenticated.next(true);
+      console.log('exito')
+      console.log(this.isAuthenticated.value)
       return true;
+      
     } catch (error) {
       console.error("Error al iniciar sesión: ", error);
       return false;
@@ -29,7 +41,7 @@ export class AuthService {
         return true;
     } catch (error) {
         if (error !== null && typeof error === 'object' && 'message' in error) {
-            console.error("Error al registrar:", error.message);  // Mostrar el mensaje de error en consola
+            console.error("Error al registrar:", error.message);
             return error.message;  // Devolver el mensaje de error
         } else {
             console.error("Error desconocido al registrar:", error);
@@ -40,8 +52,6 @@ export class AuthService {
 
 async signOut(): Promise<void> {
   await this.afAuth.signOut();
-  this.router.navigate(['/lobby']);  // Redirigir al usuario al inicio de sesión después de cerrar sesión
-
+  this.isAuthenticated.next(false);
 };
 }
-

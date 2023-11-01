@@ -5,7 +5,7 @@
       <ion-grid>
         <ion-row>
     <ion-col >
-      <ion-searchbar placeholder="{{search}}" (click)="modal.setCurrentBreakpoint(0.75)" style="background-color: #0b206e;color: white; border-radius: 20px;  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px;"></ion-searchbar>
+      <ion-searchbar [(ngModel)]="search"name="buscar" (click)="modal.setCurrentBreakpoint(0.75)" style="background-color: #0b206e;color: white; border-radius: 20px;  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px;"></ion-searchbar>
     </ion-col>
     <ion-col size="auto">
     

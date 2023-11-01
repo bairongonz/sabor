@@ -1,0 +1,15 @@
+<ion-content [fullscreen]="true">
+  <ion-content class="background">
+<nav class="ltop">
+    <ion-button color="light"[routerLink]="['/update']"> volver </ion-button>
+  </nav>
+  <nav class="ttop">
+    <img src="../../assets/images/Instrucciones.png" alt="">
+  </nav>
+  <nav id="container">
+    <ion-input [(ngModel)]="name"name="nombre" style="background-color: #0b206e;color: white; border-radius: 20px;  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px;"></ion-input>
+    <ion-input [(ngModel)]="ingr"name="ingredientes" style="background-color: #0b206e;color: white; border-radius: 20px;  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px;"></ion-input>
+    <ion-input [(ngModel)]="prep"name="prepa" style="background-color: #0b206e;color: white; border-radius: 20px;  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px;"></ion-input>
+    <ion-button (click)="updateRecipe()"></ion-button>
+  </nav>
+</ion-content>

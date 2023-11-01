@@ -29,7 +29,7 @@ export class FiltrarComponent  implements OnInit {
   ListRecipes() {
     this.recetasSubscription = new Observable<Receta[]>((subscriber) => {
       onValue(recetasRef, (snapshot: DataSnapshot) => {
-        const data = snapshot.val(); // Obtén los datos de la base de datos
+        const data = snapshot.val(); 
         if (data) {
           const recetas: Receta[] = Object.keys(data).map((key) => ({
             id: key,

@@ -12,7 +12,7 @@ export class SearchComponent  implements OnInit {
   constructor(private actionSheetCtrl: ActionSheetController, private router:Router) { }
 
 search : string = "Buscar ingredientes";
-  private numero = 1; // Variable para almacenar el número
+  private numero = 1; 
 
 handleAumentar() {
   this.numero += 1;
@@ -42,10 +42,10 @@ searcher(){
       buttons: [
         {
           text: 'Aumentar',
-          role: 'aumentar', // Define un rol personalizado para el botón
+          role: 'aumentar', 
           handler: () => {
             this.handleAumentar();
-            this.Numeric(boton) // Llama a una función para aumentar el número
+            this.Numeric(boton)
           },
           
         },
@@ -53,16 +53,16 @@ searcher(){
           text: '' + this.numero,
           role: 'numero',
           handler: () => {
-            this.Numeric(boton) // Llama a una función para aumentar el número
+            this.Numeric(boton)
           },
           
         },
         {
           text: 'Disminuir',
-          role: 'disminuir', // Define un rol personalizado para el botón
+          role: 'disminuir',
           handler: () => {
             this.handleDisminuir();
-            this.Numeric(boton) // Llama a una función para disminuir el número
+            this.Numeric(boton)
           },
         },
 
@@ -85,9 +85,6 @@ searcher(){
             this.search =this.search +', '+ this.numero + ' '+ boton + 's';}
           }
             this.numero = 1;
-            
-            // Establecer que el menú está cerrado al hacer clic en "Cancelar"
-            
           },
         },
       ],
