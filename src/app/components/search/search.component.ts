@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { RecetaCrudService } from 'app/services/crrud/receta/receta-crud.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -9,9 +10,9 @@ import { Router } from '@angular/router';
 export class SearchComponent  implements OnInit {
   presentingElement: Element | null = null;
 
-  constructor(private actionSheetCtrl: ActionSheetController, private router:Router) { }
+  constructor(private actionSheetCtrl: ActionSheetController, private router:Router,private node: RecetaCrudService ) { }
 
-search : string = "Buscar ingredientes";
+search : string = "";
   private numero = 1; 
 
 handleAumentar() {
@@ -31,6 +32,7 @@ searcher(){
   this.router.navigate(['/read']);
 }
   ngOnInit() {
+    this.node.Node()
     const element = document.querySelector('.page');
     if (element) {
       this.presentingElement = element;
@@ -70,7 +72,7 @@ searcher(){
           text: 'Aceptar',
           role: 'cancel',
           handler: () => {
-            if (this.search == "Buscar ingredientes")
+            if (this.search == "")
             {if (this.numero == 1){
               this.search = this.numero + ' '+ boton}
             else {

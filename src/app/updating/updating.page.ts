@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { getDatabase, ref, set, update } from 'firebase/database';
-import { database } from 'environments/environment';
-class Receta {
-  nombre: string = '';
-  ingredientes: string = '';
-  preparacion: string = '';
-}
+import { RecetaCrudService } from 'app/services/crrud/receta/receta-crud.service';
+
 @Component({
   selector: 'app-updating',
   templateUrl: './updating.page.html',
@@ -14,25 +9,13 @@ class Receta {
 })
 export class UpdatingPage implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private crud: RecetaCrudService) { }
   name:any = '';
   ingr:any ='';
   prep:any ='';
   key:any= '';
-  updateRecipe(){
-  const recetaRef = ref(database, `recetas/${this.key}`);
-  const nuevaReceta: Receta = {
-    nombre: this.name,
-    ingredientes: this.ingr, 
-    preparacion: this.prep,
-  };
-  update(recetaRef, nuevaReceta)
-  .then(() => {
-    console.log('receta modificada exitosamente.');
-  })
-  .catch((error) => {
-    console.error('Error al modificar la receta:', error);
-  });
+modificar(){
+  this.crud.UpdateRecipe(this.name, this.ingr, this.prep, this.key)
 }
   ngOnInit() {
     this.name = this.route.snapshot.paramMap.get('nombre');

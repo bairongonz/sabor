@@ -29,6 +29,17 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'updating',
+    loadChildren: () => import('./updating/updating.module').then( m => m.UpdatingPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'update',
+    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule),
+    canActivate: [AuthGuard]
+    
+  },
+  {
     path: 'lobby',
     loadChildren: () => import('./lobby/lobby.module').then( m => m.LobbyPageModule),
     
@@ -42,16 +53,10 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'update',
-    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
-  },
-  {
     path: 'content',
     loadChildren: () => import('./content/content.module').then( m => m.ContentPageModule)
-  },  {
-    path: 'updating',
-    loadChildren: () => import('./updating/updating.module').then( m => m.UpdatingPageModule)
   },
+  
 
 
 

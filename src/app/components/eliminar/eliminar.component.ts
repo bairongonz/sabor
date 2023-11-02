@@ -1,69 +1,22 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { getDatabase, ref, DataSnapshot, onValue, remove } from 'firebase/database';
-import { firebaseApp } from 'environments/environment';
-
-const database = getDatabase(firebaseApp);
-const recetasRef = ref(database, 'recetas');
-
-class Receta {
-  id: string = '';
-  name: string = '';
-  ingredientes: string = '';
-  receta: string = '';
-}
+import { Component, OnInit} from '@angular/core';
+import { Observable} from 'rxjs';
+import { RecetaCrudService, RecetaIn } from 'app/services/crrud/receta/receta-crud.service';
 
 @Component({
   selector: 'app-eliminar',
   templateUrl: './eliminar.component.html',
   styleUrls: ['./eliminar.component.scss'],
 })
-export class EliminarComponent implements OnInit, OnDestroy {
-  private recetasSubscription: Subscription | undefined;
-  recetas$: Observable<Receta[]> | undefined;
+export class EliminarComponent implements OnInit{
+  recetas$: Observable<RecetaIn[]> | undefined;
 
-  constructor() { }
+  constructor(private crud: RecetaCrudService) { }
 
   ngOnInit() {
-    this.ListRecipes();
+    this.recetas$ = this.crud.ListRecipes()
   }
-
-  ngOnDestroy() {
-
-    if (this.recetasSubscription) {
-      this.recetasSubscription.unsubscribe();
-    }
-  }
-
-  RemoveRecipe(claveUnica: any) {
-    console.log(claveUnica.id)
-    remove(ref(database,`recetas/${claveUnica.id}`))
-      .then(() => {
-        console.log('Receta eliminada exitosamente.');
-      })
-      .catch((error) => {
-        console.error('Error al eliminar receta:', error);
-      });
-  }
-
-  ListRecipes() {
-    this.recetasSubscription = new Observable<Receta[]>((subscriber) => {
-      onValue(recetasRef, (snapshot: DataSnapshot) => {
-        const data = snapshot.val(); 
-        if (data) {
-          const recetas: Receta[] = Object.keys(data).map((key) => ({
-            id: key,
-            name: data[key].nombre,
-            ingredientes: data[key].ingredientes,
-            receta: data[key].preparacion,
-          }));
-          subscriber.next(recetas);
-        } else {
-          subscriber.next([]);
-        }
-      });
-    }).subscribe((recetas) => {
-      this.recetas$ = new Observable((subscriber) => subscriber.next(recetas));
-    });
+  
+  remover(key:any){
+    this.crud.RemoveRecipe(key)
   }
 }

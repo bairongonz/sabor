@@ -1,7 +1,6 @@
 <div *ngIf="recetas$ | async as recetas; else loading">
-  <!-- Utiliza la directiva async para desempaquetar el Observable -->
   <div *ngFor="let r of recetas" class ="flex">
-    <p>{{ r.name }}</p>  <ion-button color="success"  [routerLink]="['/updating', {nombre: r.name, ingredientes: r.ingredientes, preparacion: r.receta, key: r.id}]"> 
+    <p>{{ r.nombre }}</p>  <ion-button color="success"  [routerLink]="['/updating', {nombre: r.nombre, ingredientes: r.ingredientes, preparacion: r.preparacion, key: r.id}]"> 
        modificar
     </ion-button>
 
