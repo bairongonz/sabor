@@ -1,13 +1,13 @@
 <div *ngIf="recetas$ | async as recetas; else loading">
+  
   <!-- Utiliza la directiva async para desempaquetar el Observable -->
   <div *ngFor="let r of recetas" class ="flex">
-    <p>{{ r.nombre }}</p>
+    <p style="color: white;">{{ r.nombre }}</p>
     <ion-button (click)="remover(r)"expand="full" type="submit"  color="danger" >
       <ion-icon name="trash-outline" ></ion-icon> 
     </ion-button>
   </div>
 </div>
-
 <ng-template #loading>
   <p>Cargando recetas...</p>
 </ng-template>

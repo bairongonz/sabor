@@ -8,17 +8,21 @@ import { RecetaCrudService } from 'app/services/crrud/receta/receta-crud.service
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent  implements OnInit {
+  // variable que permite la existencia del menu
   presentingElement: Element | null = null;
 
   constructor(private actionSheetCtrl: ActionSheetController, private router:Router,private node: RecetaCrudService ) { }
 
+  // variable conectada al formualrio
 search : string = "";
+  //cantidad inicial
   private numero = 1; 
 
+  // metodo aumento cantidad inicial
 handleAumentar() {
   this.numero += 1;
 }
-
+// metodo disminucion cantidad inicial
 handleDisminuir() {
   if (this.numero == 0)
   {this.numero + 0;
@@ -27,17 +31,21 @@ handleDisminuir() {
     this.numero -=  1;
   }
 }
-
+// metodo para buscar
 searcher(){
   this.router.navigate(['/read']);
 }
   ngOnInit() {
+    // llama a recipeCrud para verificar la existencia del nodo de la DB
     this.node.Node()
+
+    // crea el elemento de busqueda
     const element = document.querySelector('.page');
     if (element) {
       this.presentingElement = element;
     }
   }
+  // elemento de busqueda con los metodos de cantidad inicial, adicionalmente, modifican variables del formulario
   Numeric = async (boton: string) => {
     const actionSheet = await this.actionSheetCtrl.create({
       header: 'cantidad??',
@@ -91,7 +99,7 @@ searcher(){
         },
       ],
     });
-
+    // inicializacion del componente de buscar
     actionSheet.present();
   };
   

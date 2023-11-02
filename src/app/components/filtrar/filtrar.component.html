@@ -3,11 +3,8 @@
     <p>{{ r.nombre }}</p>  <ion-button color="light"  [routerLink]="['/content', {nombre: r.nombre, ingredientes: r.ingredientes, preparacion: r.preparacion}]"> 
        <ion-icon name="restaurant-outline"></ion-icon>
     </ion-button>
-
-
   </div>
 </div>
-
 <ng-template #loading>
   <p>Cargando recetas...</p>
 </ng-template>

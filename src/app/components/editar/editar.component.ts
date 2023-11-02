@@ -11,11 +11,13 @@ import { RecetaIn, RecetaCrudService } from 'app/services/crrud/receta/receta-cr
   styleUrls: ['./editar.component.scss'],
 })
 export class EditarComponent  implements OnInit {
-
+ // necesario para mostrar recetas en html
   recetas$: Observable<RecetaIn[]> | undefined;
+  
   constructor(private crud : RecetaCrudService) { }
 
   ngOnInit() {
+    // metodo retorna recetas
     this.recetas$= this.crud.ListRecipes();
   }
 

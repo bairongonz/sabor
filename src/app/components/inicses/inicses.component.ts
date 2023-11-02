@@ -13,7 +13,7 @@ const nodoRef = ref(database, 'recetas');
   styleUrls: ['./inicses.component.scss'],
 })
 export class InicsesComponent  implements OnInit {
-  
+  // variables conectadas al formulario
   password: string = '';
   errorMessage: string = '';
   email: string = '';
@@ -21,6 +21,7 @@ export class InicsesComponent  implements OnInit {
   constructor(private authService: AuthService, private router:Router) {}
   ngOnInit() {}
 
+  //metodo llama a authService para iniciar sesion
   async Login() {
     const result = await this.authService.signIn(this.email, this.password);
     if (result!== true){

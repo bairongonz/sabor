@@ -1,13 +1,10 @@
 <div *ngIf="recetas$ | async as recetas; else loading">
   <div *ngFor="let r of recetas" class ="flex">
-    <p>{{ r.nombre }}</p>  <ion-button color="success"  [routerLink]="['/updating', {nombre: r.nombre, ingredientes: r.ingredientes, preparacion: r.preparacion, key: r.id}]"> 
+    <p style="color: white;">{{ r.nombre }}</p>  <ion-button color="success"  [routerLink]="['/updating', {nombre: r.nombre, ingredientes: r.ingredientes, preparacion: r.preparacion, key: r.id}]"> 
        modificar
     </ion-button>
-
-
   </div>
 </div>
-
 <ng-template #loading>
   <p>Cargando recetas...</p>
 </ng-template>

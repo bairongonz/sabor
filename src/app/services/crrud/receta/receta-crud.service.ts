@@ -14,6 +14,7 @@ export class RecetaCrudService {
   private recetasSubscription: Subscription | undefined;
   recetas$: Observable<RecetaIn[]> | undefined;
 
+  // llama a las recetas en la DB
   ListRecipes(): Observable<RecetaIn[]> {
     return new Observable<RecetaIn[]>((subscriber) => {
       const unsubscribe = onValue(recetasRef, (snapshot: DataSnapshot) => {
@@ -35,7 +36,7 @@ export class RecetaCrudService {
       };
     });
   }
-
+ // añade recetas a la DB
   addRecipe(nombre: string, ingredientes: string, receta: string) {
 
     if (!nombre || !ingredientes || !receta) {
@@ -58,7 +59,7 @@ export class RecetaCrudService {
         console.error('Error al agregar la receta:', error);
       });
   }
-
+// elimina recetas de la DB, en base a su id
   RemoveRecipe(claveUnica: any) {
     console.log(claveUnica.id)
     remove(ref(database,`recetas/${claveUnica.id}`))
@@ -69,7 +70,7 @@ export class RecetaCrudService {
         console.error('Error al eliminar receta:', error);
       });
   }
-
+// modifica recetas de la DB, en base a su id y contenido
   UpdateRecipe(name:string, ingr:string, prep:string, key:any){
     const recetaRef = ref(database, `recetas/${key}`);
     const nuevaReceta: RecetaOut = {
@@ -86,7 +87,7 @@ export class RecetaCrudService {
       console.error('Error al modificar la receta:', error);
     });
   }
-
+// verifica la existencia del nodo de las recetas, y si no existe, lo crea y coloca una receta de ejemplo
   Node(){
     get(recetasRef)
     .then((snapshot) => {
@@ -118,13 +119,13 @@ export class RecetaCrudService {
   }
   constructor(private router: Router) { }
 }
-
+// formato de datos para subir datos a la DB
 export class RecetaOut {
   nombre: string = '';
   ingredientes: string = '';
   preparacion: string = '';
 }
-
+// formato de datos para recibir datos de la DB
 export class RecetaIn {
   id: string = '';
   nombre: string = '';

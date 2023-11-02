@@ -17,19 +17,15 @@ export interface DocumentSnapshotExists<T> extends firebase.firestore.DocumentSn
 
 export class RegistroComponent implements OnInit {
   
-
+ // variables conectadas al formulario
   email: string = '';
   password: string = '';
-
-
   errorMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) { }
+  ngOnInit(){}
 
-  ngOnInit(): void {
-   
-  }
-
+  // metodo llama a AuthService para registrar, luego, si es efectivo el registro, inicia sesion
   async register() {
     if (!this.email || !this.password) {
       this.errorMessage = 'Por favor, completa todos los campos.';
