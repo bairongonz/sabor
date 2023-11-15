@@ -6,7 +6,7 @@ import { AuthGuard } from './services/guard/auth.guard';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -16,45 +16,45 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'create',
-    loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule),
+    loadChildren: () => import('./pages/create/create.module').then( m => m.CreatePageModule),
     canActivate: [AuthGuard]
   },
   {
     path: 'delete',
-    loadChildren: () => import('./delete/delete.module').then( m => m.DeletePageModule),
+    loadChildren: () => import('./pages/delete/delete.module').then( m => m.DeletePageModule),
     canActivate: [AuthGuard]
   },
   {
     path: 'updating',
-    loadChildren: () => import('./updating/updating.module').then( m => m.UpdatingPageModule),
+    loadChildren: () => import('./pages/updating/updating.module').then( m => m.UpdatingPageModule),
     canActivate: [AuthGuard]
   },
   {
     path: 'update',
-    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule),
+    loadChildren: () => import('./pages/update/update.module').then( m => m.UpdatePageModule),
     canActivate: [AuthGuard]
     
   },
   {
     path: 'lobby',
-    loadChildren: () => import('./lobby/lobby.module').then( m => m.LobbyPageModule),
+    loadChildren: () => import('./pages/lobby/lobby.module').then( m => m.LobbyPageModule),
     
   },
   {
     path: 'read',
-    loadChildren: () => import('./read/read.module').then( m => m.ReadPageModule)
+    loadChildren: () => import('./pages/read/read.module').then( m => m.ReadPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'content',
-    loadChildren: () => import('./content/content.module').then( m => m.ContentPageModule)
+    loadChildren: () => import('./pages/content/content.module').then( m => m.ContentPageModule)
   },
   
 

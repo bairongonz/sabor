@@ -76,7 +76,7 @@ h1{
 
 // fondo
 ion-content.background{
-  --background: url(../../assets/images/pepe_definitivo.png) 0 100%/100% 100% no-repeat;
+  --background: url(../../../assets/images/pepe_definitivo.png) 0 100%/100% 100% no-repeat;
 }
 
 ion-tab-button{
@@ -87,8 +87,4 @@ ion-input{
 }
 img{
   display: block;
-}
-
-.flex{
-  display: flex;justify-content: space-between; align-items: center; margin-bottom: 15px;
 }

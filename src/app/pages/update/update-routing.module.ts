@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UpdatingPage } from 'app/updating/updating.page';
+import { UpdatingPage } from 'app/pages/updating/updating.page';
 import { UpdatePage } from './update.page';
 
 const routes: Routes = [

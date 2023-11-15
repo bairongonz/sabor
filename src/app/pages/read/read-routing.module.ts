@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ContentPage } from 'app/content/content.page';
+import { ContentPage } from 'app/pages/content/content.page';
 import { ReadPage } from './read.page';
 
 const routes: Routes = [
