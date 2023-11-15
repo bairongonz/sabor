@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';  
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { DataService } from '../Data/data.service';
+
 // @ts-ignore
 export interface DocumentSnapshotExists<T> extends firebase.firestore.DocumentSnapshot {
 
@@ -19,7 +21,7 @@ export class AuthService {
   getIsAuthenticated(): Observable<boolean> {
     return this.isAuthenticated.asObservable();
   }
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  constructor(private afAuth: AngularFireAuth, private router: Router, private data : DataService ) {this.exist()}
 
   async signIn(email: string, password: string): Promise<boolean> {
     try {
@@ -54,4 +56,15 @@ async signOut(): Promise<void> {
   await this.afAuth.signOut();
   this.isAuthenticated.next(false);
 };
+
+
+async exist(){
+ try {
+    const existe = await this.data.getItem('user');
+    console.log('funciona biennn');
+    this.signIn(existe[0], existe[1]);
+} catch (error) {
+  console.log('Errorrrr');
+};
+}
 }
