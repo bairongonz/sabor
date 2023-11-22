@@ -18,3 +18,4 @@ import { ContentPage } from './content.page';
   declarations: [ContentPage]
 })
 export class ContentPageModule {}
+

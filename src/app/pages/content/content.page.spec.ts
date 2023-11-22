@@ -15,3 +15,4 @@ describe('ContentPage', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LobbyPage } from './lobby.page';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -16,3 +17,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class LobbyPageRoutingModule {}
+

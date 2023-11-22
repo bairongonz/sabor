@@ -2,6 +2,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 // @ts-ignore
+
 export interface DocumentSnapshotExists<T> extends firebase.firestore.DocumentSnapshot {
   // ...
 }
