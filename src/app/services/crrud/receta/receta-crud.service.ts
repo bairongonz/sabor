@@ -115,9 +115,35 @@ export class RecetaCrudService {
     .catch((error) => {
       console.error('Error al verificar el nodo:', error);
     });
-  
+    
   }
   constructor(private router: Router) { }
+
+  FiltroRecipes(contenidoBuscado: string): Observable<RecetaIn[]> {
+    return new Observable<RecetaIn[]>((subscriber) => {
+      const unsubscribe = onValue(recetasRef, (snapshot: DataSnapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          // Filtrar recetas por contenido de preparación
+          const recetas: RecetaIn[] = Object.keys(data)
+            .filter((key) => data[key].ingredientes.includes(contenidoBuscado))
+            .map((key) => ({
+              id: key,
+              nombre: data[key].nombre,
+              ingredientes: data[key].ingredientes,
+              preparacion: data[key].preparacion,
+            }));
+          subscriber.next(recetas);
+        } else {
+          subscriber.next([]);
+        }
+      });
+  
+      return () => {
+        unsubscribe();
+      };
+    });
+  }
 }
 // formato de datos para subir datos a la DB
 export class RecetaOut {

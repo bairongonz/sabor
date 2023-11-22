@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { RecetaCrudService } from 'app/services/crrud/receta/receta-crud.service';
+import { SharedService } from 'app/services/shared/shared.service';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -11,7 +13,7 @@ export class SearchComponent  implements OnInit {
   // variable que permite la existencia del menu
   presentingElement: Element | null = null;
 
-  constructor(private actionSheetCtrl: ActionSheetController, private router:Router,private node: RecetaCrudService ) { }
+  constructor(private actionSheetCtrl: ActionSheetController, private router:Router,private node: RecetaCrudService, private shared:SharedService ) { }
 
   // variable conectada al formualrio
 search : string = "";
@@ -33,7 +35,9 @@ handleDisminuir() {
 }
 // metodo para buscar
 searcher(){
+  this.shared.modifData(this.search);
   this.router.navigate(['/read']);
+
 }
   ngOnInit() {
     // llama a recipeCrud para verificar la existencia del nodo de la DB

@@ -32,7 +32,7 @@ export class AuthService {
       return true;
       
     } catch (error) {
-      console.error("Error al iniciar sesión: ", error);
+      console.log("Error al iniciar sesión: ", error);
       return false;
     }
   }
@@ -43,10 +43,10 @@ export class AuthService {
         return true;
     } catch (error) {
         if (error !== null && typeof error === 'object' && 'message' in error) {
-            console.error("Error al registrar:", error.message);
+            console.log("Error al registrar:", error.message);
             return error.message;  // Devolver el mensaje de error
         } else {
-            console.error("Error desconocido al registrar:", error);
+            console.log("Error desconocido al registrar:", error);
             return "Error desconocido al intentar registrar.";
         }
     }
