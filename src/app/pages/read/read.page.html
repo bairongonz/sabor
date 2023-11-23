@@ -5,6 +5,7 @@
 
 <nav  style="box-shadow:  #d12b39fa 0px 5px 0px; width: 100%; background-color: #0b206e; ">
    <img src="../../assets/images/Recetas.png" alt="">
+   <ion-button color="light"[routerLink]="['/lobby']" style="margin-left: 50px; "> volver </ion-button>
 </nav>
 
 
@@ -12,19 +13,13 @@
 <ion-grid>
   <ion-row>
     <ion-col >
-      <ion-card style="box-shadow: #0b206e 0px 3px 8px;background-color: #fffffff3; ">
-        <ion-card-header>
+    
           <app-filtrar></app-filtrar>
           
-        </ion-card-header>
-      </ion-card>
+      
     </ion-col>
   </ion-row>
 </ion-grid>
               
-             
-          
-      
-<ion-button color="light"[routerLink]="['/lobby']"> volver </ion-button>
 
 </ion-content>

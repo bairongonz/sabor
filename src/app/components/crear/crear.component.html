@@ -1,12 +1,26 @@
 <nav style="padding: 20px; color: white;">
-  <form (ngSubmit)="subirReceta()">
   
-      <ion-input [(ngModel)]="nombre" name="name" label="Nombre"  type="text" label-placement="floating" fill="outline" placeholder="Enter text" required></ion-input>
-      <ion-input [(ngModel)]="ingredientes" name="needs" label="Ingredientes"  type="text" label-placement="floating" fill="outline" placeholder="Enter text" required></ion-input>
-      <ion-input [(ngModel)]="receta" name="recipe" label="receta"  type="textarea" label-placement="floating"  fill="outline" placeholder="Enter text" required></ion-input>
 
+ 
+
+  <ion-card style="box-shadow: #0b206e 0px 3px 8px; display: block;position: relative ;top: 90px; background-color: #fffffff3;  "  >
+    <ion-card-content style="color: black;">
+      <h1>Crear Receta</h1>
+      <form (ngSubmit)="subirReceta()">
+      <div style="margin-top: 10%;">
+        <ion-input [(ngModel)]="nombre" name="name" label="Nombre"  type="text" label-placement="floating" fill="outline" placeholder="" required style="box-shadow: #0b206e 0px 3px 0px; border-radius: 10px; color:  #0b206e; "></ion-input>
+      </div>
+      <div style="margin-top: 10%;">
+        <ion-input [(ngModel)]="ingredientes" name="needs" label="Ingredientes"  type="text" label-placement="floating" fill="outline" placeholder="" required style="box-shadow: #0b206e 0px 3px 0px; border-radius: 10px; color:  #0b206e; "></ion-input>
+      </div>
+      <div style="margin-top: 10%;">
+        <ion-input [(ngModel)]="receta" name="recipe" label="Receta"  type="textarea" label-placement="floating"  fill="outline" placeholder="" required style="box-shadow: #0b206e 0px 3px 0px; border-radius: 10px; color:  #0b206e; "></ion-input>
+      </div>
      
-    <ion-button expand="full" type="submit">crear <ion-icon name="hammer-outline"></ion-icon></ion-button>
+    <ion-button  type="submit" style="--background:#d12b39fa ; display: block; padding: 20px; color: black;">crear <ion-icon name="hammer-outline"></ion-icon></ion-button>
 
   </form>
-  </nav>
+    </ion-card-content>
+  </ion-card>     
+
+</nav>
