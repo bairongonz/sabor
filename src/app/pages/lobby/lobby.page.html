@@ -38,16 +38,6 @@
             <ion-icon name="home-outline"style="color: white;"></ion-icon>
             Menu
           </ion-tab-button></div>
-          <div style="padding: 30px;">
-          <ion-tab-button  [routerLink]="['/login']" style="background-color: #0b206e;color: white;">
-            <ion-icon name="heart-outline" style="color: #e63947bd;"></ion-icon>
-            favoritos
-          </ion-tab-button></div>
-          <div style="padding: 30px;">
-          <ion-tab-button   style="background-color: #0b206e; color: white;">
-            <ion-icon name="copy-outline" ></ion-icon>
-            categoria
-          </ion-tab-button></div>
           <ion-menu-toggle style="padding: 30px;">
           <ion-tab-button  style="background-color: #0b206e;color: white;">
             <ion-icon  name="person-outline"></ion-icon>
@@ -56,7 +46,9 @@
         </ion-menu-toggle>
         </ion-tab-bar>
       </ion-tabs>
+      <div style="margin-top: 5%;">
     <app-search></app-search>
+  </div>
 
     </div>
 

@@ -9,6 +9,7 @@ import { SharedService } from 'app/services/shared/shared.service';
   styleUrls: ['./filtrar.component.scss'],
 })
 export class FiltrarComponent  implements OnInit {
+  recetas: any[] = [];
   // metodo necesario para mostrar recetas
   recetas$: Observable<RecetaIn[]> | undefined;
   constructor(private crud : RecetaCrudService, private shared: SharedService) { }

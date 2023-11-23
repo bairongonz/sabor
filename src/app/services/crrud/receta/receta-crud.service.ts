@@ -25,6 +25,7 @@ export class RecetaCrudService {
             nombre: data[key].nombre,
             ingredientes: data[key].ingredientes,
             preparacion: data[key].preparacion,
+            img: data[key].img
           }));
           subscriber.next(recetas);
         } else {
@@ -48,6 +49,30 @@ export class RecetaCrudService {
       nombre: nombre,
       ingredientes: ingredientes, 
       preparacion: receta,
+    };
+
+    push(recetasRef, nuevaReceta)
+      .then(() => {
+        console.log('Receta agregada exitosamente.');
+        this.router.navigate(['/lobby']);
+      })
+      .catch((error) => {
+        console.error('Error al agregar la receta:', error);
+      });
+  }
+
+  addExtRecipe(nombre: string, ingredientes: string, receta: string, img : string) {
+
+    if (!nombre || !ingredientes || !receta) {
+      console.error('Por favor, complete todos los campos de la receta.');
+      return;
+    }
+
+    const nuevaReceta: RecetaExtOut = {
+      nombre: nombre,
+      ingredientes: ingredientes, 
+      preparacion: receta,
+      img: img,
     };
 
     push(recetasRef, nuevaReceta)
@@ -132,6 +157,7 @@ export class RecetaCrudService {
               nombre: data[key].nombre,
               ingredientes: data[key].ingredientes,
               preparacion: data[key].preparacion,
+              img : data[key].img,
             }));
           subscriber.next(recetas);
         } else {
@@ -157,4 +183,12 @@ export class RecetaIn {
   nombre: string = '';
   ingredientes: string = '';
   preparacion: string = '';
+  img: string= '';
+}
+
+export class RecetaExtOut{  
+nombre: string = '';
+ingredientes: string = '';
+preparacion: string = '';
+img: string='';
 }

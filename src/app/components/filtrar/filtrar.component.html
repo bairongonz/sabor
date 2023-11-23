@@ -1,9 +1,22 @@
 <div *ngIf="recetas$ | async as recetas; else loading">
+
+  <ion-row align-items-center justify-content-center>
+    <ion-col size="12">
   <div *ngFor="let r of recetas" class ="flex">
-    <p>{{ r.nombre }}</p>  <ion-button color="light"  [routerLink]="['/content', {nombre: r.nombre, ingredientes: r.ingredientes, preparacion: r.preparacion}]"> 
+    <ion-card color="lighblue"style="margin-bottom: 10%; width: 100%; padding: 10%"> 
+      <ion-card-header style="min-height: 20%; max-height: 20%;">
+       <img src="{{r.img}}" alt=""></ion-card-header>
+      <ion-card-title style="text-align: center;">{{ r.nombre }}</ion-card-title>
+     <ion-button color="light" style="align-self: center; display: flex;" [routerLink]="['/content', {nombre: r.nombre, ingredientes: r.ingredientes, preparacion: r.preparacion}]"> 
        <ion-icon name="restaurant-outline"></ion-icon>
     </ion-button>
+  </ion-card>
   </div>
+  
+</ion-col>
+
+</ion-row>
+
 </div>
 <ng-template #loading>
   <p>Cargando recetas...</p>
