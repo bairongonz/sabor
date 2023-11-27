@@ -3,8 +3,16 @@
 
     
   <nav style="box-shadow:  #d12b39fa 0px 5px 0px; width: 100%; background-color: #0b206e;">
-    <img src="../../assets/images/Instrucciones.png" alt="">
-    <ion-button color="light"[routerLink]="['/update']" style=" margin-left: 50px;"> volver </ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+          <img src="../../assets/images/Recetas.png" alt="">
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button color="light"[routerLink]="['/update']" style=" margin-left: 50px;"> volver </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
   </nav>
   <nav >
     <ion-card style="box-shadow: #0b206e 0px 3px 8px; display: block;position: relative ; background-color: #fffffff3;  "  >
@@ -19,7 +27,7 @@
           <div style="margin-top: 10%;">
             <ion-input [(ngModel)]="prep"name="prepa" style="box-shadow: #0b206e 0px 3px 0px; border-radius: 10px; color:  #0b206e; "></ion-input>
           </div>
-            <ion-button type="submit" style="--background:#d12b39fa ; display: block; padding: 20px; color: black;"> modificar </ion-button>
+            <ion-button type="submit" style="--background:#d12b39fa ; display: block; padding: 20px; color:white;"> modificar </ion-button>
         </form>
       </ion-card-content>
     </ion-card>

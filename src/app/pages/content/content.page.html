@@ -2,7 +2,16 @@
   <ion-content >
 
   <nav  style="box-shadow:  #d12b39fa 0px 5px 0px; width: 100%; background-color: #0b206e; ">
-    <img src="../../assets/images/Instrucciones.png" alt="">
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+          <img src="../../assets/images/Instrucciones.png" alt=""> 
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button color="light"[routerLink]="['/read']"> volver </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
   </nav>
 
   <ion-grid>
@@ -26,5 +35,5 @@
       </ion-row>
     </ion-grid>
   
-  <ion-button color="light"[routerLink]="['/read']"> volver </ion-button>
+
 </ion-content>

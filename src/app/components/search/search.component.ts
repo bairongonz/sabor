@@ -52,10 +52,10 @@ searcher(){
   // elemento de busqueda con los metodos de cantidad inicial, adicionalmente, modifican variables del formulario
   Numeric = async (boton: string) => {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'cantidad??',
+      header: 'Cantidad de Ingredientes',
       buttons: [
         {
-          text: 'Aumentar',
+          text: '+',
           role: 'aumentar', 
           handler: () => {
             this.handleAumentar();
@@ -72,7 +72,7 @@ searcher(){
           
         },
         {
-          text: 'Disminuir',
+          text: '-',
           role: 'disminuir',
           handler: () => {
             this.handleDisminuir();

@@ -1,5 +1,5 @@
 
-<nav style=" position: relative; top: -630px; " >
+<nav style="position: absolute; top: 10px;" >
 
     <form (ngSubmit)="searcher()">
       <ion-grid>
@@ -24,11 +24,19 @@
     <ion-content>
       <ion-list>
         <ion-item>
-
-          <ion-button (click)="Numeric('huevo')">huevo</ion-button>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="auto">
+          <ion-button  (click)="Numeric('huevo')" >Huevo</ion-button>
+              </ion-col>
+              <ion-col size="auto">
           <ion-button (click)="Numeric('papa')">papa</ion-button>
+              </ion-col>
+              <ion-col size="auto">
           <ion-button (click)="Numeric('zapallo')">zapallo</ion-button>
-
+              </ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-item>
 
       </ion-list>

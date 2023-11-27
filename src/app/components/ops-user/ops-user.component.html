@@ -1,16 +1,16 @@
 
 
 <div *ngIf="(logged$ | async) === false">
-  <ion-button color="Danger"  [routerLink]="['/login']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Iniciar Sesión</ion-button>
-  <ion-button color="Danger"  [routerLink]="['/register']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Registrarse</ion-button>
+  <ion-button color="Danger"  [routerLink]="['/login']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px; color: white;"> Iniciar Sesión</ion-button>
+  <ion-button color="Danger"  [routerLink]="['/register']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px; color: white;"> Registrarse</ion-button>
 </div>
 <div *ngIf="(logged$ | async) === true">
-  <p>opciones de administrador</p>
-  <ion-button color="Danger"  [routerLink]="['/create']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Crear</ion-button>
-  <ion-button color="Danger"  [routerLink]="['/delete']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Eliminar</ion-button>
-  <ion-button color="Danger"  [routerLink]="['/update']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> modificar</ion-button>
-  <p>opciones de Usuario</p>
-  <ion-button color="Danger" (click)="cerrarSesion()" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px;"> Cerrar sesion</ion-button>
+  <div style="box-shadow:  #0b206e 0px 5px 0px; width: 260px; "> <p>Opciones de Administrador</p></div>
+  <ion-button color="Danger"  [routerLink]="['/create']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px; color: white;"> Crear</ion-button>
+  <ion-button color="Danger"  [routerLink]="['/delete']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px; color:white;"> Eliminar</ion-button>
+  <ion-button color="Danger"  [routerLink]="['/update']" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px; color: white;"> modificar</ion-button>
+  <div style="box-shadow:  #0b206e 0px 5px 0px; width: 260px; "><p>Opciones de Usuario</p>  </div>
+  <ion-button color="Danger" (click)="cerrarSesion()" style="background-color: #d12b39fa; border-radius: 10px; display: block; color: #0b206e; margin: 15px; color: white;"> Cerrar sesion</ion-button>
 </div>
 
  

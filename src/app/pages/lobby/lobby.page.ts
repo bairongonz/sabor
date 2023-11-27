@@ -14,8 +14,14 @@ export class LobbyPage implements OnInit {
 
   ngOnInit(){
 
-    
   }
 
+  swiperSlideChanged(e: any){
+    console.log('changed:', e)
+    
+    
+  }
+  
+  
   
 }
