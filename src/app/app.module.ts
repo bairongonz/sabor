@@ -11,15 +11,29 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage-angular';
-
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), AngularFireModule.initializeApp(environment.firebaseConfig) ,
-    AngularFireAuthModule, HttpClientModule] ,
-  providers: [ AuthService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
-  bootstrap: [AppComponent],
-  
+  imports: [
+    BrowserModule,
+     IonicModule.forRoot(),
+      AppRoutingModule,
+      IonicStorageModule.forRoot(),
+       AngularFireModule.initializeApp(environment.firebaseConfig) ,
+    AngularFireAuthModule,
+     HttpClientModule,
+      FormsModule] ,
+
+  providers: [ 
+    AuthService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, 
+    {provide: FIREBASE_OPTIONS , useValue: environment.firebaseConfig}],
+
+  bootstrap: 
+  [AppComponent
+  ],
 })
 export class AppModule {}
