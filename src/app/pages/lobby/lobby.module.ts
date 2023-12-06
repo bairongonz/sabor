@@ -8,6 +8,7 @@ import { OpsUserComponent } from 'app/components/ops-user/ops-user.component';
 import { LobbyPageRoutingModule } from './lobby-routing.module';
 
 
+
 import { LobbyPage } from './lobby.page';
 
 @NgModule({
@@ -17,7 +18,7 @@ import { LobbyPage } from './lobby.page';
     IonicModule,
     LobbyPageRoutingModule
   ],
-  declarations: [LobbyPage, SearchComponent, OpsUserComponent],
+  declarations: [LobbyPage, SearchComponent, OpsUserComponent]
 
 })
 export class LobbyPageModule {}

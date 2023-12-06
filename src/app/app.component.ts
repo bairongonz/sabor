@@ -3,8 +3,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
-import { register } from 'swiper/element/bundle';
-register();
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
