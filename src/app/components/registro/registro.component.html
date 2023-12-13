@@ -7,13 +7,13 @@
 
     <nav >
       <form (ngSubmit)="register()">
-
-    <ion-input [(ngModel)]="email" name="email" label="Correo electrónico"  type="email"label-placement="floating" fill="outline" placeholder="" required style="box-shadow: #0b206e 0px 3px 0px; border-radius: 10px; color: #0b206e;"></ion-input>
-
-
-    <ion-input [(ngModel)]="password" name="password" label="Contraseña" type="password"label-placement="floating" fill="outline" placeholder="" required style="box-shadow: #0b206e 0px 3px 0px; border-radius: 10px; color: #0b206e;"></ion-input>
-
-  <ion-button  type="submit" style="--background:#d12b39fa ; display: block; padding: 20px;">Registrar</ion-button>
+   <div style="margin-top: 10%;">
+    <ion-input [(ngModel)]="email" name="email" label="Correo electrónico"  type="email"label-placement="floating"  placeholder="" required style="box-shadow: #0b206e 0px 3px 0px; border-radius: 10px; color: #0b206e;"></ion-input>
+    </div>
+    <div style="margin-top: 10%;">
+    <ion-input [(ngModel)]="password" name="password" label="Contraseña" type="password"label-placement="floating"  placeholder="" required style="box-shadow: #0b206e 0px 3px 0px; border-radius: 10px; color: #0b206e;"></ion-input>
+    </div>
+  <ion-button  type="submit" style="--background: #d12b39fa; --border-radius: 10px; display: block;  margin: 20px; color: white ;height: 50px;">Registrar</ion-button>
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}
   </div>

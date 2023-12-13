@@ -5,14 +5,13 @@
       <ion-grid>
         <ion-row>
     <ion-col >
-      <ion-searchbar [(ngModel)]="search" name="buscar" placeholder="buscar ingedientes" (click)="modal.setCurrentBreakpoint(0.75)" style="background-color: #0b206e;color: white; border-radius: 20px;  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px;"></ion-searchbar>
+      <ion-searchbar [(ngModel)]="search" name="buscar" placeholder="buscar ingedientes" (click)="modal.setCurrentBreakpoint(0.75)"  style=" --background: #0b206e ;background-color: #0b206e;color: rgb(255, 255, 255); border-radius: 20px;  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px;"></ion-searchbar>
     </ion-col>
     <ion-col size="auto">
-    
-      <ion-button class="boton" color="Danger" id="open-modal"   style="background-color:#d12b39fa; border-radius: 15px ;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px;"><ion-icon name="filter-sharp" style="color: black;"></ion-icon></ion-button>
+      <ion-button   id="open-modal"    style="  --border-radius: 15px ;--box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; --background:#d12b39fa ; height: 62px;"><ion-icon name="filter-sharp" style="color: black;"></ion-icon></ion-button>
   </ion-col>
   <ion-col size="auto">
-    <ion-button color="Danger"  type="submit" style="background-color:#fcfcfcfa; border-radius: 15px ;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px; "> <ion-icon name="search" style="color: black;"></ion-icon> </ion-button>
+    <ion-button color="Danger"  type="submit" style=" --border-radius: 15px ;--box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; height: 62px; "> <ion-icon name="search" style="color: black;"></ion-icon> </ion-button>
   </ion-col>
   
   </ion-row>
